@@ -10,7 +10,7 @@ interface RepositoryCardProps {
 
 const RepositoryCard = ({ repository }: RepositoryCardProps) => {
     return (
-        <article className='mb-4 rounded-md border border-gray-700  p-4 transition-colors hover:border-blue-500 focus-within:border-blue-500 focus-within:outline focus-within:outline-2 focus-within:outline-blue-500 focus-within:outline-offset-2'>
+        <article className='mb-4 rounded-md border border-gray-700 p-4 transition-colors focus-within:border-blue-500 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-blue-500 hover:border-blue-500'>
             {/* repository name and visibility badge */}
             <div className='mb-2 flex items-center gap-2'>
                 <h2 className='text-xl font-semibold'>
@@ -18,13 +18,13 @@ const RepositoryCard = ({ repository }: RepositoryCardProps) => {
                         href={repository.html_url}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='break-words text-blue-400 no-underline hover:underline focus:rounded focus:outline focus:outline-2 focus:outline-blue-500 focus:outline-offset-2'
+                        className='break-words text-blue-400 no-underline hover:underline focus:rounded focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-500'
                         aria-label={`View ${repository.name} repository on GitHub`}>
                         {repository.name}
                     </a>
                 </h2>
                 {repository.visibility && (
-                    <span className='rounded-full border border-gray-700 bg-transparent px-2 py-0.5 text-xs font-medium capitalize text-gray-400'>
+                    <span className='rounded-full border border-gray-700 bg-transparent px-2 py-0.5 text-xs font-medium text-gray-400 capitalize'>
                         {repository.visibility}
                     </span>
                 )}
